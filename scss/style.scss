@@ -2,11 +2,11 @@
 //2.usunac opisy z color
 //3. jak przesuniesz na iphone w dol to pod stupka widac tlo (tło na body)
 
+@use './reset' as *;
 @use './mixins' as *;
 @use './colors' as *;
 @use './frequency_style' as *;
-@use './reset' as *;
-
+@use './why_you_read_style' as *;
 
 //NAV
 .nav {

@@ -27,16 +27,20 @@ body {
 }
 
 .freq-main .freq-sect {
+  position: relative;
   padding: 10em 2em;
 }
+.freq-main .freq-sect .freq-sect:hover .freq-main__card-graph {
+  transform: rotateX(-180deg);
+  opacity: 0;
+}
+.freq-main .freq-sect .freq-sect:hover .freq-main__card-info {
+  transform: rotateX(0);
+  opacity: 1;
+}
 .freq-main__card-graph {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  border-radius: 20px;
-  text-align: center;
-  background-color: #333;
+  background-color: #666;
+  opacity: 1;
 }
 .freq-main__card-graph--heading {
   padding: 1em 1em;
@@ -44,10 +48,9 @@ body {
 }
 .freq-main__card-graph--img {
   display: block;
+  height: 400px;
   width: 100%;
-  height: auto;
   padding: 2em 3em;
-  margin-bottom: 10em;
 }
 .freq-main__card-graph--text {
   position: absolute;
@@ -55,6 +58,49 @@ body {
   right: 0;
   padding: 1em 1em;
   font-size: 2rem;
+}
+.freq-main .freq-main__card-graph, .freq-main .freq-main__card-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  width: 100%;
+  margin: 4em 0;
+  border-radius: 20px;
+  text-align: center;
+  perspective: 1000px;
+}
+.freq-main__card-info {
+  background-color: #333;
+  opacity: 0;
+}
+.freq-main__card-info--heading {
+  padding: 1em 1em;
+  font-size: 2.5rem;
+}
+.freq-main__card-info--text {
+  padding: 1em 1em;
+  font-size: 1rem;
+}
+
+.why-read-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100%;
+  text-align: center;
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(0, 0, 59, 0.73)), url("");
+  background-size: cover;
+  background-position: center;
+  /* background-attachment: fixed; */
+}
+.why-read-header__heading {
+  font-size: 3rem;
 }
 
 .nav {

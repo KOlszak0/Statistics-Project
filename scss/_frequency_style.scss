@@ -17,27 +17,35 @@
 }
 
 .freq-main {
-	&__how-often-books {
-	}
-	&__how-often-schoolbooks {
-	}
-	&__how-many {
-	}
-	&__who-motivates {
-	}
+	// &__how-often-books {
+	// }
+	// &__how-often-schoolbooks {
+	// }
+	// &__how-many {
+	// }
+	// &__who-motivates {
+	// }
 
 	.freq-sect {
+		position: relative;
 		padding: 10em 2em;
+
+		.freq-sect:hover {
+			.freq-main__card-graph {
+				transform: rotateX(-180deg);
+                opacity: 0;
+			}	
+			.freq-main__card-info {
+                transform: rotateX(0);
+                opacity: 1;
+            }
+
+		}
 	}
 
 	&__card-graph {
-        position: relative;
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-        border-radius: 20px;
-		text-align: center;
-		background-color: #333;
+		background-color: #666;
+		opacity: 1;
 
         &--heading {
             padding: 1em 1em;
@@ -46,11 +54,9 @@
 
         &--img {
             display: block;
+			height: 400px;
             width: 100%;
-            height: auto;
             padding: 2em 3em;
-            margin-bottom: 10em;
-
         }
 
         &--text {
@@ -61,6 +67,37 @@
             font-size: 2rem;
         }
 
+	}
 
+	.freq-main__card-graph, .freq-main__card-info  {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		height: 700px;
+		width: 100%;
+		margin: 4em 0;
+        border-radius: 20px;
+		text-align: center;
+		perspective: 1000px;
+	}
+
+	&__card-info {
+		background-color: #333;
+		opacity: 0;
+		// display: none;
+
+		&--heading {
+			padding: 1em 1em;
+			font-size: 2.5rem;
+		}
+
+		&--text {
+            padding: 1em 1em;
+            font-size: 1rem;
+        }
 	}
 }

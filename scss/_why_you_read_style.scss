@@ -1,0 +1,17 @@
+@use './mixins' as *;
+@use './colors' as *;
+@use './reset' as *;
+
+.why-read-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+	width: 100%;
+	text-align: center;
+	@include hero-img($gradient: $headerGradient, $imgFile: '');
+
+	&__heading {
+		font-size: 3rem;
+	}
+}
