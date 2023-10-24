@@ -4,10 +4,13 @@
   padding: 0;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   /* font-family: 'Dancing Script', cursive; */
   font-family: "Montserrat", sans-serif;
-  font-size: 62.5%;
 }
 
 .freq-header {
@@ -26,6 +29,57 @@ body {
   font-size: 3rem;
 }
 
+.freq-main__card {
+  position: relative;
+  margin: 4em 2em;
+  perspective: 1000px;
+}
+.freq-main__card:hover .freq-main__card--graph {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+.freq-main__card:hover .freq-main__card--info {
+  transform: rotateY(0);
+  opacity: 1;
+}
+.freq-main__card--graph, .freq-main__card--info {
+  text-align: center;
+  border-radius: 20px;
+  background-color: #333;
+  transition: transform 1s, opacity 1s;
+}
+.freq-main__card--graph--heading, .freq-main__card--info--heading {
+  padding: 1em;
+  font-size: 2.5rem;
+}
+.freq-main__card--graph--img, .freq-main__card--info--img {
+  height: auto;
+  width: 100%;
+  max-height: 200px;
+  padding: 0 3em;
+  margin-bottom: 6em;
+}
+.freq-main__card--graph--text, .freq-main__card--info--text {
+  padding: 1em;
+  font-size: 2rem;
+}
+.freq-main__card--graph {
+  opacity: 1;
+}
+.freq-main__card--graph--text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.freq-main__card--info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: rotateY(180deg);
+  opacity: 0;
+}
 .freq-main .freq-sect {
   position: relative;
   padding: 10em 2em;
@@ -59,7 +113,8 @@ body {
   padding: 1em 1em;
   font-size: 2rem;
 }
-.freq-main .freq-main__card-graph, .freq-main .freq-main__card-info {
+.freq-main .freq-main__card-graph,
+.freq-main .freq-main__card-info {
   position: absolute;
   top: 0;
   left: 0;
