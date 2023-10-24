@@ -8,6 +8,7 @@ body {
   /* font-family: 'Dancing Script', cursive; */
   font-family: "Montserrat", sans-serif;
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 .nav {
@@ -22,6 +23,7 @@ body {
   font-size: 2rem;
   border: none;
   background: none;
+  color: black;
   cursor: pointer;
   z-index: 10;
 }

@@ -13,6 +13,7 @@ body {
 	/* font-family: 'Dancing Script', cursive; */
 	font-family: 'Montserrat', sans-serif;
 	font-size: 62.5%;
+	overflow-x: hidden;
 }
 
 //NAV
@@ -28,6 +29,7 @@ body {
 		font-size: 2rem;
 		border: none;
 		background: none;
+		color: black;
 		cursor: pointer;
 		z-index: 10;
 	}
@@ -69,6 +71,7 @@ body {
 	height: 100vh;
 	width: 100vw;
 	z-index: 0;
+	overflow-X: hidden;
 
 	&__text-box {
 		display: flex;
@@ -127,10 +130,9 @@ body {
 //FOOTER
 footer {
 	padding: 1.3em;
-	font-size: .8rem;
+	font-size: 0.8rem;
 	text-align: center;
 	color: $main;
 	background-color: $footerColor;
 	font-weight: bold;
-	
 }
