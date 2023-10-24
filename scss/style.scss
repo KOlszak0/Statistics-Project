@@ -1,20 +1,12 @@
 //1.Nawigacja nie ma animacji
 //2.usunac opisy z color
+//3. jak przesuniesz na iphone w dol to pod stupka widac tlo (tło na body)
+
 @use './mixins' as *;
 @use './colors' as *;
+@use './frequency_style' as *;
+@use './reset' as *;
 
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	/* font-family: 'Dancing Script', cursive; */
-	font-family: 'Montserrat', sans-serif;
-	font-size: 62.5%;
-	overflow-x: hidden;
-}
 
 //NAV
 .nav {
@@ -46,6 +38,7 @@ body {
 		display: none;
 		transition: transform 0.3s;
 		background-color: $main;
+		z-index: 10;
 
 		a {
 			text-decoration: none;
@@ -135,3 +128,8 @@ footer {
 	background-color: $footerColor;
 	font-weight: bold;
 }
+
+
+
+
+

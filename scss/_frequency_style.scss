@@ -1,0 +1,66 @@
+@use './mixins' as *;
+@use './colors' as *;
+@use './reset' as *;
+
+.freq-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+	width: 100%;
+	text-align: center;
+	@include hero-img($gradient: $headerGradient, $imgFile: '');
+
+	&__heading {
+		font-size: 3rem;
+	}
+}
+
+.freq-main {
+	&__how-often-books {
+	}
+	&__how-often-schoolbooks {
+	}
+	&__how-many {
+	}
+	&__who-motivates {
+	}
+
+	.freq-sect {
+		padding: 10em 2em;
+	}
+
+	&__card-graph {
+        position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+        border-radius: 20px;
+		text-align: center;
+		background-color: #333;
+
+        &--heading {
+            padding: 1em 1em;
+            font-size: 2.5rem;
+        }
+
+        &--img {
+            display: block;
+            width: 100%;
+            height: auto;
+            padding: 2em 3em;
+            margin-bottom: 10em;
+
+        }
+
+        &--text {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 1em 1em;
+            font-size: 2rem;
+        }
+
+
+	}
+}
