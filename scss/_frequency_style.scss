@@ -8,6 +8,7 @@
 	align-items: center;
 	height: 50vh;
 	width: 100%;
+	padding: 0 1em;
 	text-align: center;
 	@include hero-img($gradient: $headerGradient, $imgFile: '');
 

@@ -8,10 +8,117 @@
 	align-items: center;
 	height: 50vh;
 	width: 100%;
+	padding: 0 1em;
 	text-align: center;
 	@include hero-img($gradient: $headerGradient, $imgFile: '');
 
 	&__heading {
 		font-size: 3rem;
+	}
+}
+
+.why-read-main {
+	&__benefits {
+		padding: 8em 3em;
+
+		&--heading {
+			padding: 1em 0;
+			text-align: center;
+			font-size: 2.5rem;
+		}
+
+		&--box {
+			display: flex;
+			height: 100%;
+			position: relative;
+		}
+
+		&--line {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 2px;
+			background-color: #000;
+			// height: 100%;
+			// width: 2px;
+		}
+
+		&--list {
+			font-size: 2rem;
+			list-style: none;
+		}
+
+		&--li-item {
+			padding: 0.5em 0;
+			i {
+				margin: 0 0.5em;
+			}
+		}
+	}
+
+	&__encore {
+		padding: 0 3em 8em;
+
+		&--heading {
+			padding: 1em 0;
+			text-align: center;
+			font-size: 2.5rem;
+		}
+
+		background-color: #333;
+		
+
+		&--cloud-box {
+			// background-color: #666;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			// align-content: center;
+		}
+
+		&--cloud {
+			display: flex;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 30px;
+			min-width: 40px;
+			max-width: 220px;
+			min-height: 40px;
+			margin: 4em 0;
+			position: relative;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+
+			p {
+				font-size: 1.5rem;
+				z-index: 6;
+			}
+		}
+		&--cloud:before,
+		&--cloud:after {
+			content: '';
+			background-color: #fff;
+			border-radius: 50%;
+			display: block;
+			position: absolute;
+			z-index: 5;
+		}
+		&--cloud:before {
+			width: 44px;
+			height: 44px;
+			top: -12px;
+			left: 28px;
+			box-shadow: -50px 30px 0 -12px #fff;
+		}
+		&--cloud:after {
+			bottom: -10px;
+			right: 26px;
+			width: 30px;
+			height: 30px;
+			box-shadow: 40px -34px 0 0 #fff, -28px -6px 0 -2px #fff, -24px 17px 0 -6px #fff, -5px 25px 0 -10px #fff;
+		}
 	}
 }
