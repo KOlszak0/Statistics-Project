@@ -1,33 +1,17 @@
-@use './mixins' as *;
-@use './colors' as *;
-@use './reset' as *;
-
-.favourites-header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 50vh;
-	width: 100%;
-	padding: 0 1em;
-	text-align: center;
-	@include hero-img($gradient: $headerGradient, $imgFile: '');
-
-	&__heading {
-		font-size: 3rem;
-	}
-}
+@use "./mixins" as *;
+@use "./colors" as *;
+@use "./reset" as *;
 
 .fav-main {
 	&__question {
-		// display: flex;
-		// flex-direction: column;
-		// justify-content: center;
-		// align-items: center;
-
 		&--heading {
 			text-align: center;
 			padding: 1em;
 			font-size: 2.5rem;
+			border-radius: 20px;
+			background-color: $darkViolet;
+			color: $main;
+			margin-bottom: 1em;
 		}
 
 		&--circle-box {
@@ -35,15 +19,14 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			padding: 3em;
+			padding: 5em;
 			overflow: hidden;
 		}
 
 		&--circle {
 			display: flex;
-			width: 30em;
-			height: 30em;
-			background-color: #333;
+			width: 25em;
+			height: 25em;
 			border-radius: 50%;
 			overflow: hidden;
 			transform: rotate(20deg);
@@ -54,34 +37,31 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 300px;
-			height: 300px;
-			background-color: blue;
+			width: 25em;
+			height: 25em;
+			text-align: center;
 
 			p {
-				font-size: 3rem;
+				font-size: 2.5rem;
 				font-weight: bold;
 				transform: rotate(-20deg);
+				transition: font-size 0.3s;
 			}
 		}
 
 		&--yes {
-            text-align: center;
-			background-color: lime;
-			border-right: 2px solid black;
+			background-color: rgb(88, 254, 124);
 		}
 
 		&--no {
-            text-align: center;
-			background-color: red;
-			border-left: 2px solid black;
-            width: 200%;
+			background-color: rgb(253, 67, 67);
+			width: 160%;
 		}
 
 		&--podium-box {
 			display: flex;
 			flex-direction: column;
-			padding: 3em;
+			padding: 5em;
 		}
 
 		&--podium {
@@ -89,21 +69,23 @@
 			flex-direction: row;
 			align-items: end;
 			justify-content: center;
-			padding: 10em 0 0;
+			padding: 15em 0 0;
 			overflow: hidden;
 
 			&--item {
+				position: relative;
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				position: relative;
 				width: 100%;
+
 				p {
 					font-size: 4rem;
+					color: $main;
 				}
 
 				&--book {
-					content: '';
+					content: "";
 					position: absolute;
 					top: 3em;
 					width: 6em;
@@ -111,45 +93,67 @@
 					background-color: #333;
 					transition: transform 0.3s;
 					z-index: -1;
+					background-position: center;
+				background-size: cover;
 				}
 			}
 
 			&--item1 {
-				background-color: tomato;
+				background-color: rgba(28, 0, 59, 1);
 				height: 10em;
 
-				&--book {
+				&-book {		
+				background-image: url(../img/fav-book-1.png);
+				}
+				&-author{
+					background-image: url(../img/andrzej_sapkowski.PNG);
 				}
 			}
 
 			&--item2 {
-				background-color: lime;
+				background-color: $secondary;
 				height: 8em;
 
-				&--book {
+				&-book {
+					background-image: url(../img/fav-book-2.png);
+				}
+				&-author{
+					background-image: url(../img/tolkien.jpg);
 				}
 			}
 
 			&--item3 {
-				background-color: cyan;
+				background-color: rgb(92, 67, 107);
 				height: 6em;
 
-				&--book {
+				&-book {
+					background-image: url(../img/fav-book-3.png);
+				}
+				&-author{
+					background-image: url(../img/gogol.jpg);
 				}
 			}
 		}
 
 		&--podium-btn {
-            width: 60%;
+			width: 60%;
 			margin: 0 auto;
 			margin-top: 2em;
 			padding: 0.5em 1em;
-            border-radius: 8px;
-            border: none;
+			border-radius: 8px;
+			border: none;
 			font-size: 2rem;
-            background-color: lime;
-            color: #000;
+			background-color: #fff;
+			border: 1px solid black;
+			color: #000;
+			cursor: pointer;
 		}
+	}
+
+	&__line {
+		width: 100%;
+		height: 1em;
+		background-color: $darkViolet;
 	}
 }
 
@@ -158,5 +162,7 @@
 }
 
 .disabled {
-    background-color: #333;
+	color: #7e7e7e;
+	border: 1px solid #7e7e7e;
+	cursor: auto;
 }

@@ -13,23 +13,27 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.freq-header {
+.small-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 40vh;
   width: 100%;
   padding: 0 1em;
   text-align: center;
-  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(0, 0, 59, 0.73)), url("");
+  background-image: linear-gradient(0deg, rgba(28, 0, 59, 0.95) 5%, rgba(245, 246, 252, 0.9) 100%), url("");
   background-size: cover;
   background-position: center;
-  /* background-attachment: fixed; */
 }
-.freq-header__heading {
-  font-size: 3rem;
+.small-header__heading {
+  font-size: 3.5rem;
+  text-transform: uppercase;
 }
 
+.freq-main {
+  padding: 4em 2em;
+  background-color: #d4d4d4;
+}
 .freq-main__card {
   position: relative;
   margin: 4em 2em;
@@ -46,8 +50,9 @@ body {
 .freq-main__card--graph, .freq-main__card--info {
   text-align: center;
   border-radius: 20px;
-  background-color: #333;
-  transition: transform 1s, opacity 1s;
+  background-color: rgba(28, 0, 59, 0.9);
+  transition: transform 1s, opacity 0.5s;
+  color: #d4d4d4;
 }
 .freq-main__card--graph--heading, .freq-main__card--info--heading {
   padding: 1em;
@@ -58,7 +63,9 @@ body {
   width: 100%;
   max-height: 200px;
   padding: 0 3em;
-  margin-bottom: 6em;
+}
+.freq-main__card--graph--img:last-of-type, .freq-main__card--info--img:last-of-type {
+  margin-bottom: 7em;
 }
 .freq-main__card--graph--text, .freq-main__card--info--text {
   padding: 1em;
@@ -80,93 +87,35 @@ body {
   left: 0;
   transform: rotateY(180deg);
   opacity: 0;
+  background-color: #44406A;
 }
-.freq-main .freq-sect {
-  position: relative;
-  padding: 10em 2em;
+.freq-main__card--info--list-item {
+  padding: 1em;
+  font-size: 1.8rem;
 }
-.freq-main .freq-sect .freq-sect:hover .freq-main__card-graph {
-  transform: rotateX(-180deg);
-  opacity: 0;
-}
-.freq-main .freq-sect .freq-sect:hover .freq-main__card-info {
-  transform: rotateX(0);
-  opacity: 1;
-}
-.freq-main__card-graph {
-  background-color: #666;
-  opacity: 1;
-}
-.freq-main__card-graph--heading {
-  padding: 1em 1em;
-  font-size: 2.5rem;
-}
-.freq-main__card-graph--img {
-  display: block;
-  height: 400px;
-  width: 100%;
-  padding: 2em 3em;
-}
-.freq-main__card-graph--text {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 1em 1em;
-  font-size: 2rem;
-}
-.freq-main .freq-main__card-graph,
-.freq-main .freq-main__card-info {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  height: 700px;
-  width: 100%;
-  margin: 4em 0;
-  border-radius: 20px;
-  text-align: center;
-  perspective: 1000px;
-}
-.freq-main__card-info {
-  background-color: #333;
-  opacity: 0;
-}
-.freq-main__card-info--heading {
-  padding: 1em 1em;
-  font-size: 2.5rem;
-}
-.freq-main__card-info--text {
-  padding: 1em 1em;
-  font-size: 1rem;
-}
-
-.why-read-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-  width: 100%;
-  padding: 0 1em;
-  text-align: center;
-  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(0, 0, 59, 0.73)), url("");
-  background-size: cover;
-  background-position: center;
-  /* background-attachment: fixed; */
-}
-.why-read-header__heading {
-  font-size: 3rem;
+.freq-main__card--info--list-item i {
+  margin-right: 1em;
 }
 
 .why-read-main__benefits {
-  padding: 8em 3em;
+  background-color: #44406A;
+  margin: 2em 1em;
+  padding: 2em;
+  border-radius: 20px;
+}
+.why-read-main__benefits--description {
+  color: #d4d4d4;
+  font-size: 1.5rem;
+  text-align: center;
 }
 .why-read-main__benefits--heading {
-  padding: 1em 0;
+  color: #d4d4d4;
+  margin: 0.5em 0;
   text-align: center;
   font-size: 2.5rem;
+}
+.why-read-main__benefits--heading--description {
+  text-transform: uppercase;
 }
 .why-read-main__benefits--box {
   display: flex;
@@ -178,8 +127,8 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 2px;
-  background-color: #000;
+  width: 3px;
+  background-color: #d4d4d4;
 }
 .why-read-main__benefits--list {
   font-size: 2rem;
@@ -187,18 +136,31 @@ body {
 }
 .why-read-main__benefits--li-item {
   padding: 0.5em 0;
+  margin-left: 0.5em;
+  color: #d4d4d4;
+  transition: font-weight 0.5s;
 }
 .why-read-main__benefits--li-item i {
   margin: 0 0.5em;
+  transition: margin 0.3s;
+}
+.why-read-main__benefits--li-item:hover {
+  color: #fff;
+}
+.why-read-main__benefits--li-item:hover i {
+  margin: 0 0.2em 0 0.8em;
 }
 .why-read-main__encore {
-  padding: 0 3em 8em;
-  background-color: #333;
+  padding: 2.5em;
+  background-color: #44406A;
+  margin: 2em 3em;
+  border-radius: 20px;
 }
 .why-read-main__encore--heading {
-  padding: 1em 0;
+  color: #d4d4d4;
   text-align: center;
   font-size: 2.5rem;
+  margin-bottom: 1em;
 }
 .why-read-main__encore--cloud-box {
   display: flex;
@@ -247,23 +209,6 @@ body {
   box-shadow: 40px -34px 0 0 #fff, -28px -6px 0 -2px #fff, -24px 17px 0 -6px #fff, -5px 25px 0 -10px #fff;
 }
 
-.spec-info-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-  width: 100%;
-  padding: 0 1em;
-  text-align: center;
-  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(0, 0, 59, 0.73)), url("");
-  background-size: cover;
-  background-position: center;
-  /* background-attachment: fixed; */
-}
-.spec-info-header__heading {
-  font-size: 3rem;
-}
-
 .spec-info-main__message-box {
   display: flex;
   flex-direction: column;
@@ -271,7 +216,10 @@ body {
   align-items: center;
   padding: 3em 1em;
   margin: 4em 1em;
-  background: url("http://forums.crackberry.com/attachments/blackberry-10-wallpapers-f308/137432d1361639896t-z10-wallpaper-set-z10-music.jpg");
+  background-image: linear-gradient(to bottom, rgba(28, 0, 59, 0.6), rgba(27, 0, 59, 0.5490196078)), url("http://forums.crackberry.com/attachments/blackberry-10-wallpapers-f308/137432d1361639896t-z10-wallpaper-set-z10-music.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   border-radius: 10px;
 }
 .spec-info-main__message-box--bubble {
@@ -295,17 +243,17 @@ body {
 }
 .spec-info-main__message-box--text--name {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 1.5rem;
   margin: 0 0 4px;
-  color: #3498db;
+  color: rgb(189, 0, 189);
 }
 .spec-info-main__message-box--text--alt {
-  color: #2ecc71;
+  color: rgba(28, 0, 59, 0.9);
 }
 .spec-info-main__message-box--text--message {
   font-size: 12px;
   margin: 0;
-  color: #2b2b2b;
+  color: #000000;
 }
 .spec-info-main__message-box--text--timestamp {
   font-size: 11px;
@@ -341,41 +289,27 @@ body {
   transform: rotate(45deg) scaleY(-1);
 }
 
-.favourites-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-  width: 100%;
-  padding: 0 1em;
-  text-align: center;
-  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(0, 0, 59, 0.73)), url("");
-  background-size: cover;
-  background-position: center;
-  /* background-attachment: fixed; */
-}
-.favourites-header__heading {
-  font-size: 3rem;
-}
-
 .fav-main__question--heading {
   text-align: center;
   padding: 1em;
   font-size: 2.5rem;
+  border-radius: 20px;
+  background-color: rgba(28, 0, 59, 0.9);
+  color: #d4d4d4;
+  margin-bottom: 1em;
 }
 .fav-main__question--circle-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3em;
+  padding: 5em;
   overflow: hidden;
 }
 .fav-main__question--circle {
   display: flex;
-  width: 30em;
-  height: 30em;
-  background-color: #333;
+  width: 25em;
+  height: 25em;
   border-radius: 50%;
   overflow: hidden;
   transform: rotate(20deg);
@@ -384,48 +318,46 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 300px;
-  background-color: blue;
+  width: 25em;
+  height: 25em;
+  text-align: center;
 }
 .fav-main__question--yes p, .fav-main__question--no p {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   transform: rotate(-20deg);
+  transition: font-size 0.3s;
 }
 .fav-main__question--yes {
-  text-align: center;
-  background-color: lime;
-  border-right: 2px solid black;
+  background-color: rgb(88, 254, 124);
 }
 .fav-main__question--no {
-  text-align: center;
-  background-color: red;
-  border-left: 2px solid black;
-  width: 200%;
+  background-color: rgb(253, 67, 67);
+  width: 160%;
 }
 .fav-main__question--podium-box {
   display: flex;
   flex-direction: column;
-  padding: 3em;
+  padding: 5em;
 }
 .fav-main__question--podium {
   display: flex;
   flex-direction: row;
   align-items: end;
   justify-content: center;
-  padding: 10em 0 0;
+  padding: 15em 0 0;
   overflow: hidden;
 }
 .fav-main__question--podium--item {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   width: 100%;
 }
 .fav-main__question--podium--item p {
   font-size: 4rem;
+  color: #d4d4d4;
 }
 .fav-main__question--podium--item--book {
   content: "";
@@ -436,18 +368,38 @@ body {
   background-color: #333;
   transition: transform 0.3s;
   z-index: -1;
+  background-position: center;
+  background-size: cover;
 }
 .fav-main__question--podium--item1 {
-  background-color: tomato;
+  background-color: rgb(28, 0, 59);
   height: 10em;
 }
+.fav-main__question--podium--item1-book {
+  background-image: url(../img/fav-book-1.png);
+}
+.fav-main__question--podium--item1-author {
+  background-image: url(../img/andrzej_sapkowski.PNG);
+}
 .fav-main__question--podium--item2 {
-  background-color: lime;
+  background-color: #44406A;
   height: 8em;
 }
+.fav-main__question--podium--item2-book {
+  background-image: url(../img/fav-book-2.png);
+}
+.fav-main__question--podium--item2-author {
+  background-image: url(../img/tolkien.jpg);
+}
 .fav-main__question--podium--item3 {
-  background-color: cyan;
+  background-color: rgb(92, 67, 107);
   height: 6em;
+}
+.fav-main__question--podium--item3-book {
+  background-image: url(../img/fav-book-3.png);
+}
+.fav-main__question--podium--item3-author {
+  background-image: url(../img/gogol.jpg);
 }
 .fav-main__question--podium-btn {
   width: 60%;
@@ -457,8 +409,15 @@ body {
   border-radius: 8px;
   border: none;
   font-size: 2rem;
-  background-color: lime;
+  background-color: #fff;
+  border: 1px solid black;
   color: #000;
+  cursor: pointer;
+}
+.fav-main__line {
+  width: 100%;
+  height: 1em;
+  background-color: rgba(28, 0, 59, 0.9);
 }
 
 .move-column {
@@ -466,21 +425,24 @@ body {
 }
 
 .disabled {
-  background-color: #333;
+  color: #7e7e7e;
+  border: 1px solid #7e7e7e;
+  cursor: auto;
 }
 
 .nav {
-  display: flex;
   position: relative;
 }
 .nav button {
   position: fixed;
   top: 0;
   right: 0;
-  padding: 1em;
-  font-size: 2rem;
+  margin: 0.5em;
+  padding: 0.25em 0.5em;
+  font-size: 3rem;
   border: none;
-  background: none;
+  border-radius: 30%;
+  background-color: rgba(212, 212, 212, 0.3);
   color: black;
   cursor: pointer;
   z-index: 10;
@@ -495,34 +457,30 @@ body {
   height: 100vh;
   transform: translateX(100%);
   transition: transform 0.3s;
-  background-color: #e4e5e6;
+  background-color: #d4d4d4;
   z-index: 10;
 }
 .nav__items a {
   text-decoration: none;
   padding: 1em;
   text-align: center;
-  font-size: 1.5rem;
-  color: #44406A;
+  font-size: 2rem;
+  color: rgba(28, 0, 59, 0.9);
 }
 .nav .hidden {
   display: none;
 }
 .nav .show-nav {
-  display: flex;
-  position: fixed;
   transform: translateX(0);
 }
 
 .header {
-  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(0, 0, 59, 0.73)), url("../img/book-hero.jpg");
+  background-image: linear-gradient(0deg, rgba(28, 0, 59, 0.95) 26%, rgba(245, 246, 252, 0.9) 100%), url("../img/book-hero.jpg");
   background-size: cover;
   background-position: center;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   height: 100vh;
   width: 100%;
-  z-index: 0;
-  padding: 0 1em;
 }
 .header__text-box {
   display: flex;
@@ -533,46 +491,69 @@ body {
   height: 100%;
   padding: 0 3em;
   text-align: center;
-  font-size: 1.2rem;
 }
 .header__heading {
   margin-bottom: 0.5em;
+  font-family: "Dancing Script", cursive;
+  font-size: 5rem;
+}
+.header__text {
+  font-size: 1.5rem;
 }
 
 .main .homepage {
   text-align: center;
-  background-color: #e4e5e6;
+  background-color: #d4d4d4;
 }
 .main .homepage__about-us, .main .homepage__about-project, .main .homepage__about-form {
-  padding-bottom: 2em;
+  padding: 8em 2em;
 }
 .main .homepage__about-us h2, .main .homepage__about-project h2, .main .homepage__about-form h2 {
-  padding-bottom: 0.5em;
-  font-size: 2.3rem;
+  padding-bottom: 1em;
+  font-size: 3rem;
+  text-transform: uppercase;
 }
 .main .homepage__about-us p, .main .homepage__about-project p, .main .homepage__about-form p {
-  font-size: 0.9rem;
-}
-.main .homepage__about-us {
-  padding: 10em 2em;
+  font-size: 1.5rem;
 }
 .main .homepage__about-project {
-  background-color: #44406A;
-  padding: 10em 2em;
-  color: #e4e5e6;
+  background-color: rgba(28, 0, 59, 0.9);
+  color: #d4d4d4;
+  background-image: linear-gradient(to bottom, rgba(28, 0, 59, 0.8), rgba(28, 0, 59, 0.8)), url("../img/about-project-small.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
-.main .homepage__about-form {
-  padding: 10em 2em;
+.main .homepage__about-form p {
+  padding: 1em;
 }
-.main .homepage__about-form img {
-  width: 150px;
+.main .homepage__about-form h3 {
+  font-size: 1.5rem;
+  margin-top: 3em;
+}
+.main .homepage__about-form .chart {
+  width: 15em;
+  margin: 2em 0;
+}
+.main .homepage__about-form .results h3 {
+  margin-bottom: 1em;
+}
+.main .homepage__about-form .results ul {
+  list-style: none;
+}
+.main .homepage__about-form .results ul li {
+  color: #000;
+  font-size: 1.5rem;
+}
+.main .homepage__about-form .results ul li i {
+  margin-right: 1em;
 }
 
 footer {
-  padding: 1.3em;
-  font-size: 0.8rem;
+  padding: 1.5em;
   text-align: center;
-  color: #e4e5e6;
-  background-color: #0B0123;
+  background-color: rgba(28, 0, 59, 0.9);
+  font-size: 1rem;
+  color: #d4d4d4;
   font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

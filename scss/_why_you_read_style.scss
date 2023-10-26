@@ -1,30 +1,29 @@
-@use './mixins' as *;
-@use './colors' as *;
-@use './reset' as *;
-
-.why-read-header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 50vh;
-	width: 100%;
-	padding: 0 1em;
-	text-align: center;
-	@include hero-img($gradient: $headerGradient, $imgFile: '');
-
-	&__heading {
-		font-size: 3rem;
-	}
-}
+@use "./mixins" as *;
+@use "./colors" as *;
+@use "./reset" as *;
 
 .why-read-main {
 	&__benefits {
-		padding: 8em 3em;
+		background-color: $secondary;
+		margin: 2em 1em;
+		padding: 2em;
+		border-radius: 20px;
+
+		&--description {
+			color: $main;
+			font-size: 1.5rem;
+			text-align: center;
+		}
 
 		&--heading {
-			padding: 1em 0;
+			color: $main;
+			margin: .5em 0;
 			text-align: center;
 			font-size: 2.5rem;
+
+			&--description {
+				text-transform: uppercase;
+			}
 		}
 
 		&--box {
@@ -38,10 +37,8 @@
 			top: 0;
 			left: 0;
 			bottom: 0;
-			width: 2px;
-			background-color: #000;
-			// height: 100%;
-			// width: 2px;
+			width: 3px;
+			background-color: $main;
 		}
 
 		&--list {
@@ -51,23 +48,36 @@
 
 		&--li-item {
 			padding: 0.5em 0;
+			margin-left: 0.5em;
+			color: $main;
+			transition: font-weight 0.5s;
+
 			i {
 				margin: 0 0.5em;
+				transition: margin .3s;
+			}
+
+			&:hover {
+				color: #fff; 
+				i {
+					margin: 0 .2em 0 .8em;
+				}
 			}
 		}
 	}
 
 	&__encore {
-		padding: 0 3em 8em;
+		padding: 2.5em;
+		background-color: $secondary;
+		margin: 2em 3em;
+		border-radius: 20px;
 
 		&--heading {
-			padding: 1em 0;
+			color: $main;
 			text-align: center;
 			font-size: 2.5rem;
+			margin-bottom: 1em;
 		}
-
-		background-color: #333;
-		
 
 		&--cloud-box {
 			// background-color: #666;
@@ -99,7 +109,7 @@
 		}
 		&--cloud:before,
 		&--cloud:after {
-			content: '';
+			content: "";
 			background-color: #fff;
 			border-radius: 50%;
 			display: block;
@@ -118,7 +128,8 @@
 			right: 26px;
 			width: 30px;
 			height: 30px;
-			box-shadow: 40px -34px 0 0 #fff, -28px -6px 0 -2px #fff, -24px 17px 0 -6px #fff, -5px 25px 0 -10px #fff;
+			box-shadow: 40px -34px 0 0 #fff, -28px -6px 0 -2px #fff,
+				-24px 17px 0 -6px #fff, -5px 25px 0 -10px #fff;
 		}
 	}
 }

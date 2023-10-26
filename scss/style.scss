@@ -1,34 +1,35 @@
 //2.usunac opisy z color
 //3. jak przesuniesz na iphone w dol to pod stupka widac tlo (tło na body)
+//ikonka x
 
-@use './reset' as *;
-@use './mixins' as *;
-@use './colors' as *;
-@use './frequency_style' as *;
-@use './why_you_read_style' as *;
-@use './specific_info_style' as *;
-@use './favourites_style' as *;
+@use "./reset" as *;
+@use "./mixins" as *;
+@use "./colors" as *;
+@use "./frequency_style" as *;
+@use "./why_you_read_style" as *;
+@use "./specific_info_style" as *;
+@use "./favourites_style" as *;
 
-//NAV 
+//NAV
 .nav {
-	display: flex;
 	position: relative;
 
 	button {
 		position: fixed;
 		top: 0;
 		right: 0;
-		padding: 1em;
-		font-size: 2rem;
+		margin: 0.5em;
+		padding: 0.25em 0.5em;
+		font-size: 3rem;
 		border: none;
-		background: none;
+		border-radius: 30%;
+		background-color: rgba($main, $alpha: 0.3);
 		color: black;
 		cursor: pointer;
 		z-index: 10;
 	}
 
 	&__items {
-		// position: absolute;
 		position: fixed;
 		display: flex;
 		flex-direction: column;
@@ -39,14 +40,15 @@
 		transform: translateX(100%);
 		transition: transform 0.3s;
 		background-color: $main;
+
 		z-index: 10;
 
 		a {
 			text-decoration: none;
 			padding: 1em;
 			text-align: center;
-			font-size: 1.5rem;
-			color: $secondary;
+			font-size: 2rem;
+			color: $darkViolet;
 		}
 	}
 	.hidden {
@@ -54,19 +56,18 @@
 	}
 
 	.show-nav {
-		display: flex;
-		position: fixed;
 		transform: translateX(0);
 	}
 }
 
 //HEADER
 .header {
-	@include hero-img($gradient: $headerGradient, $imgFile: '../img/book-hero.jpg');
+	@include hero-img(
+		$gradient: $photoGradient,
+		$imgFile: "../img/book-hero.jpg"
+	);
 	height: 100vh;
 	width: 100%;
-	z-index: 0;
-	padding: 0 1em;
 
 	&__text-box {
 		display: flex;
@@ -77,10 +78,16 @@
 		height: 100%;
 		padding: 0 3em;
 		text-align: center;
-		font-size: 1.2rem;
 	}
+
 	&__heading {
 		margin-bottom: 0.5em;
+		font-family: "Dancing Script", cursive;
+		font-size: 5rem;
+	}
+
+	&__text {
+		font-size: 1.5rem;
 	}
 }
 
@@ -89,34 +96,65 @@
 	.homepage {
 		text-align: center;
 		background-color: $main;
+
 		&__about-us,
 		&__about-project,
 		&__about-form {
-			padding-bottom: 2em;
+			padding: 8em 2em;
 
 			h2 {
-				padding-bottom: 0.5em;
-				font-size: 2.3rem;
+				padding-bottom: 1em;
+				font-size: 3rem;
+				text-transform: uppercase;
 			}
 
 			p {
-				font-size: 0.9rem;
+				font-size: 1.5rem;
 			}
-		}
-		&__about-us {
-			padding: 10em 2em;
 		}
 
 		&__about-project {
-			background-color: $secondary;
-			padding: 10em 2em;
+			background-color: $darkViolet;
 			color: $main;
+			@include hero-img(
+				$gradient: $darkGradient,
+				$imgFile: "../img/about-project-small.jpg"
+			);
 		}
 
 		&__about-form {
-			padding: 10em 2em;
-			img {
-				width: 150px;
+			p {
+				padding: 1em;
+			}
+
+			h3 {
+				font-size: 1.5rem;
+				margin-top: 3em;
+			}
+
+			.chart {
+				width: 15em;
+
+				margin: 2em 0;
+			}
+
+			.results {
+				h3 {
+					margin-bottom: 1em;
+				}
+
+				ul {
+					list-style: none;
+
+					li {
+						color: #000;
+						font-size: 1.5rem;
+
+						i {
+							margin-right: 1em;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -124,15 +162,10 @@
 
 //FOOTER
 footer {
-	padding: 1.3em;
-	font-size: 0.8rem;
+	padding: 1.5em;
 	text-align: center;
+	background-color: $darkViolet;
+	font-size: 1rem;
 	color: $main;
-	background-color: $footerColor;
 	font-weight: bold;
 }
-
-
-
-
-

@@ -1,3 +1,5 @@
+@use './colors' as *;
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -10,4 +12,5 @@ html {
 body {
 	/* font-family: 'Dancing Script', cursive; */
 	font-family: 'Montserrat', sans-serif;
+	// background-color: $darkViolet;
 }
