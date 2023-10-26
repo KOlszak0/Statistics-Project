@@ -1,0 +1,162 @@
+@use './mixins' as *;
+@use './colors' as *;
+@use './reset' as *;
+
+.favourites-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+	width: 100%;
+	padding: 0 1em;
+	text-align: center;
+	@include hero-img($gradient: $headerGradient, $imgFile: '');
+
+	&__heading {
+		font-size: 3rem;
+	}
+}
+
+.fav-main {
+	&__question {
+		// display: flex;
+		// flex-direction: column;
+		// justify-content: center;
+		// align-items: center;
+
+		&--heading {
+			text-align: center;
+			padding: 1em;
+			font-size: 2.5rem;
+		}
+
+		&--circle-box {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 3em;
+			overflow: hidden;
+		}
+
+		&--circle {
+			display: flex;
+			width: 30em;
+			height: 30em;
+			background-color: #333;
+			border-radius: 50%;
+			overflow: hidden;
+			transform: rotate(20deg);
+		}
+
+		&--yes,
+		&--no {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 300px;
+			height: 300px;
+			background-color: blue;
+
+			p {
+				font-size: 3rem;
+				font-weight: bold;
+				transform: rotate(-20deg);
+			}
+		}
+
+		&--yes {
+            text-align: center;
+			background-color: lime;
+			border-right: 2px solid black;
+		}
+
+		&--no {
+            text-align: center;
+			background-color: red;
+			border-left: 2px solid black;
+            width: 200%;
+		}
+
+		&--podium-box {
+			display: flex;
+			flex-direction: column;
+			padding: 3em;
+		}
+
+		&--podium {
+			display: flex;
+			flex-direction: row;
+			align-items: end;
+			justify-content: center;
+			padding: 10em 0 0;
+			overflow: hidden;
+
+			&--item {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				width: 100%;
+				p {
+					font-size: 4rem;
+				}
+
+				&--book {
+					content: '';
+					position: absolute;
+					top: 3em;
+					width: 6em;
+					height: 9em;
+					background-color: #333;
+					transition: transform 0.3s;
+					z-index: -1;
+				}
+			}
+
+			&--item1 {
+				background-color: tomato;
+				height: 10em;
+
+				&--book {
+				}
+			}
+
+			&--item2 {
+				background-color: lime;
+				height: 8em;
+
+				&--book {
+				}
+			}
+
+			&--item3 {
+				background-color: cyan;
+				height: 6em;
+
+				&--book {
+				}
+			}
+		}
+
+		&--podium-btn {
+            width: 60%;
+			margin: 0 auto;
+			margin-top: 2em;
+			padding: 0.5em 1em;
+            border-radius: 8px;
+            border: none;
+			font-size: 2rem;
+            background-color: lime;
+            color: #000;
+		}
+	}
+}
+
+.move-column {
+	transform: translateY(-13em);
+}
+
+.disabled {
+    background-color: #333;
+}
