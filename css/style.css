@@ -13,6 +13,39 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.link {
+  position: relative;
+}
+
+.link,
+link::after,
+link::before {
+  transition: 0.3s;
+}
+
+.three::after,
+.three::before {
+  content: "";
+  position: absolute;
+  bottom: 0.5em;
+  width: 0px;
+  border-bottom: 2px solid #44406A;
+  transition: width 0.6s;
+}
+
+.three::before {
+  right: 50%;
+}
+
+.three::after {
+  left: 50%;
+}
+
+.three:hover::before,
+.three:hover::after {
+  width: 50%;
+}
+
 .small-header {
   display: flex;
   justify-content: center;
@@ -162,7 +195,7 @@ body {
   transition: margin 0.3s;
 }
 .why-read-main__benefits--li-item:hover {
-  color: #fff;
+  color: rgba(245, 246, 252, 0.8);
 }
 .why-read-main__benefits--li-item:hover i {
   margin: 0 0.2em 0 0.8em;
