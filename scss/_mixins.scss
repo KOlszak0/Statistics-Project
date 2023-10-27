@@ -1,10 +1,10 @@
-@use './colors' as *;
+@use "./colors" as *;
 
 @mixin hero-img($gradient, $imgFile) {
 	background-image: $gradient, url($imgFile);
 	background-size: cover;
 	background-position: center;
-	background-attachment: fixed; 
+	background-attachment: fixed;
 }
 
 @mixin gradient($gradient, $imgFile) {
@@ -21,10 +21,32 @@
 	width: 100%;
 	padding: 0 1em;
 	text-align: center;
-	@include gradient($gradient: $headerGradient, $imgFile: '');
+	@include gradient($gradient: $headerGradient, $imgFile: "");
 
 	&__heading {
 		font-size: 3.5rem;
 		text-transform: uppercase;
+	}
+}
+
+.conclusions {
+	color: $main;
+	font-size: 1.5rem;
+	text-align: center;
+	background-color: $secondary;
+	border-radius: 20px;
+	padding: 2em 1em;
+	margin: 4em 2em;
+
+	&--heading {
+		text-transform: uppercase;
+		margin-bottom: 1em;
+	}
+	&--text {
+		display: flex;
+		flex-direction: column;
+		p {
+			padding: 1em 0;
+		}
 	}
 }

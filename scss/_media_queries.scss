@@ -1,13 +1,179 @@
+@use "./reset" as *;
+@use "./mixins" as *;
+@use "./colors" as *;
+@use "./frequency_style" as *;
+@use "./why_you_read_style" as *;
+@use "./specific_info_style" as *;
+@use "./favourites_style" as *;
 
 // PC
 @media (min-width: 992px) {
+	.wrapper {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
 
-    
+	// .main {
+	// 	.homepage {
+	// 		&__about-us,
+	// 		&__about-project,
+	// 		&__about-form {
+	// 			padding: 10em 2em;
+
+	// 			h2 {
+	// 				padding-bottom: 3em;
+	// 				font-size: 3rem;
+	// 			}
+
+	// 			p {
+	// 				font-size: 1.5rem;
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	.small-header {
+		&__heading {
+			font-size: 5rem;
+		}
+	}
 }
-
-
 // TABLETY
 @media (min-width: 768px) {
-    
-    
+	.header {
+		h1 {
+			font-size: 8rem;
+		}
+		p {
+			font-size: 2.5rem;
+		}
+	}
+
+	.fav-main {
+
+		&__line {
+			margin: 6em 0;
+		}
+
+		&__question {
+			margin-top: 4em;
+			margin-bottom: 4em;
+
+			&--circle-box{
+				padding-top: 0;
+			}
+
+			&--circle {
+				margin-top: 4em;
+				width: 35em;
+				height: 35em;
+			}
+
+			&--yes,
+			&--no {
+				width: 35em;
+				height: 35em;
+			}
+
+			&--no {
+				width: 220%;
+			}
+
+			&--podium-box {
+				margin-top: 8em;
+			}
+
+			&--podium {
+				padding-top: 25em;
+				&--item {
+					&--book {
+						width: 10em;
+						height: 16em;
+
+						&--text {
+							p {
+								font-size: 1.3rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.move-column {
+		transform: translateY(-25em);
+	}
+
+	.why-read-main {
+		&__encore {
+			&--cloud-box {
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+			}
+
+			&--cloud {
+				width: 30%;
+			}
+		}
+	}
+
+	.spec-info-main {
+		
+
+		&__message-box {
+			width: 80%;
+			max-width: 80%;
+			align-items: start;
+			margin: 10em 0;
+
+			&--bubble {
+				width: 70%;
+				max-width: 40%;
+				margin-left: 3em;
+			
+			}
+
+			&--alt {
+				margin-right: 3em;
+				margin-left: auto;
+			}
+
+			&--text {
+				&--name {
+					font-size: 2rem;
+					margin: 0 0 .8rem;
+				}
+				
+				&--message {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+
+	footer {
+		p {
+			font-size: 1.5rem;
+			padding: 0.5em;
+		}
+	}
+}
+
+//DUZE TELEFONY
+@media (min-width: 550px) {
+	.freq-main {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+
+		&__card {
+			width: 40em;
+			height: 100%;
+		}
+	}
 }
